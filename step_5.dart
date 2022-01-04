@@ -55,12 +55,11 @@ class _NamesState extends State<Names> {
             onPressed: () {
               // Navigate to saved names screen when tapped.
               Navigator.of(context).push(
-                MaterialPageRoute<void>(
+                MaterialPageRoute(
                   builder: (_) => SavedNames(_savedNames),
                 ),
               );
             },
-            tooltip: 'Saved Names',
           ),
         ],
       ),
@@ -104,9 +103,9 @@ class SavedNames extends StatelessWidget {
   Widget build(BuildContext context) {
     // Similar to how we build ListView in `_NamesState`.
     final tiles = savedNames.map(
-      (word) => ListTile(
+      (name) => ListTile(
         title: Text(
-          word,
+          name,
           style: const TextStyle(fontSize: 18.0),
         ),
       ),

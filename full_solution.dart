@@ -47,18 +47,17 @@ class _NamesState extends State<Names> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Startup Name Generator'),=
+        title: const Text('Startup Name Generator'),
         actions: [
           IconButton(
             icon: const Icon(Icons.list),
-            onPressed: () {=
+            onPressed: () {
               Navigator.of(context).push(
-                MaterialPageRoute<void>(
+                MaterialPageRoute(
                   builder: (_) => SavedNames(_savedNames),
                 ),
               );
             },
-            tooltip: 'Saved Names',
           ),
         ],
       ),
@@ -89,18 +88,18 @@ class _NamesState extends State<Names> {
     ).toList();
   }
 }
-=
-class SavedNames extends StatelessWidget {=
+
+class SavedNames extends StatelessWidget {
   const SavedNames(this.savedNames);
 
   final Set<String> savedNames;
 
   @override
-  Widget build(BuildContext context) {=
+  Widget build(BuildContext context) {
     final tiles = savedNames.map(
-      (word) => ListTile(
+      (name) => ListTile(
         title: Text(
-          word,
+          name,
           style: const TextStyle(fontSize: 18.0),
         ),
       ),
